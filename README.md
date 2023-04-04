@@ -4,7 +4,7 @@
 
 ## Description
 
-I have built a simple application using JavaScript, CSS, HTML, and the Google Book API. I was inspired by the Ferris wheel, which to me represents fun and foresight, and books, which symbolize knowledge. I think those are the characteristic we should have to become a good developer. Combining these two elements, I created this small yet meaningful application.
+I have built a simple application using JavaScript, CSS, HTML, and the Google Book API. I was inspired by the Ferris wheel, which to me represents fun and foresight, and books, which symbolize knowledge. I think those are the characteristics we should have to become a good developer. Combining these two elements, I created this small yet meaningful application.
 
 Through this app, I also demonstrate my proficiency in using JavaScript, CSS, HTML, and API.
 
