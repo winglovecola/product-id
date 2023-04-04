@@ -1,0 +1,312 @@
+
+
+body {
+    background-image: url('./img/amusement-park.jpg');
+    background-size: cover;
+
+}
+
+main {
+
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.ferrisWheelCenter {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+    color:white;
+    text-align: center;
+    line-height: 100px;
+    z-index:10;
+}
+
+
+.ferrisWheelComponent {
+    position: absolute;
+    border-radius: 50%;
+    border: 16px solid rgb(215, 98, 52);
+}
+
+
+.capsult {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(234, 162, 123);
+    text-align: center;
+    line-height: 100px;
+    z-index: 1;
+}
+
+.capsult img {
+    width: 60px;
+}
+
+
+.poleLeft {
+    position: absolute;
+    width: 30px;
+    height: 470px;
+    border: 1px solid black;
+    background-color: blueviolet;
+    transform: rotate(20deg);
+    border-bottom: 0;
+  }
+
+  .poleRight {
+    position: absolute;
+    width: 30px;
+    height: 470px;
+    border: 1px solid black;
+    background-color: blueviolet;
+    transform: rotate(-20deg);
+    border-bottom: 0;
+  }
+
+
+  /*google*/
+  #googleCloud {
+    display:block;
+    position: absolute;
+    width: 200;
+    height: 140;
+    background-image: url('./img/cloud.png');
+    background-size: 100% 100%;    
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 170px;
+    z-index: 50;
+}
+
+#googleBooksStatus {
+
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 0px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.googleBooksStatusRed {
+
+    color:rgb(255, 76, 76);
+}
+
+
+#bookQuery {
+
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: -280px;
+    width: 250px;
+    height: 170px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    line-height: 1.8;
+    padding: 10px;
+    text-align: left;
+    
+}
+
+#bookQueryInput {
+
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+#bookQueryUpdate {
+
+    color: green;
+}
+
+
+#downloadBtn {
+
+    font-size: 20px;
+    margin: 5px;
+}
+
+
+#tips {
+
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    text-align: left;
+    font-size: 20px;
+    padding: 10px;
+    z-index: 100;
+    
+}
+#tips li {
+
+    margin-bottom: 15px;
+}
+
+/*library*/
+#library {
+
+    position: absolute;
+    width: 200;
+    height: 200;
+    background-image: url('./img/library.png');
+    background-size: 100% 100%;    
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 50;
+}
+
+#libraryBooks {
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    border: 1px solid black;
+    background-color: rgb(214, 214, 214, 0.8);
+    text-align: left;
+    font-size: 18px;
+    z-index: 100;
+}
+
+#libraryLabel {
+
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+#libraryBookStock {
+
+    height: 97%;
+    overflow-y: auto;
+}
+
+#libraryBookCount {
+
+    display: inline-block;
+}
+
+.bookDiv {
+
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(235, 235, 235);
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.bookDiv:hover {
+    background-color: rgb(241, 250, 255);
+}
+
+
+.bookDiv .remove {
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 10;
+    z-index: 1;
+}
+
+.bookDiv .remove:hover {
+    background-color: rgb(255, 76, 76);
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.bookDiv .bookimg {
+
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+}
+
+
+.bookDiv .bookimg img {
+
+    width: 50px;
+}
+
+
+
+
+.bookDiv .info {
+
+    display: inline-block;
+    width: 75%;
+    height: 30px;
+    vertical-align: top;
+}
+
+.bookDiv .title {
+
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.bookDiv .author {
+
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.bookDiv .categories {
+
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    
+}
+
+
+
+
+
