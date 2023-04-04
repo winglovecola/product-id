@@ -3,7 +3,7 @@
 body {
     background-image: url('./img/amusement-park.jpg');
     background-size: cover;
-
+    position: fixed;
 }
 
 main {

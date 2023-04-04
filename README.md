@@ -19,13 +19,13 @@ Through this app, I also demonstrate my proficiency in using JavaScript, CSS, HT
 
 ## Live Site
 
-https://winglovecola.herokuapp.com/
+https://winglovecola.github.io/knowledge-wheel/
 
 
 
 ## Preview
 
-![Screenshot](https://github.com/winglovecola/my-portfolio/blob/main/client/public/src/img/screenshot.jpg?raw=true)
+![Screenshot](https://github.com/winglovecola/knowledge-wheel/blob/main/img/screenshot.jpg?raw=true)
 
 
 
