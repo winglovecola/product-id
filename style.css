@@ -85,7 +85,6 @@ main {
     cursor: pointer;
     line-height: 140px;
     text-align: center;
-    user-select: none; 
     z-index: 50;
 }
 
