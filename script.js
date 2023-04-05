@@ -127,7 +127,7 @@ function libraryLoadBook (capsuleId) {
       
     </div>`;
 
-    $("#libraryBookStock").append(bookDiv);
+    $("#libraryBookStock").prepend(bookDiv);
 
     $("#libraryBookCount").html(` (${libraryBookStock.length})`);
     
