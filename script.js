@@ -201,8 +201,21 @@ ferrisWheelBasePoleRight.style.top = `${ferrisWheelCenterPointY}px`;
 
 //define googleCloud and set the cloud position 
 const googleCloud = document.getElementById('googleCloud');
-googleCloud.style.left  = `${ferrisWheelCenterPointX + 250}px`;
-googleCloud.style.top = `${ferrisWheelCenterPointY - 400}px`;
+
+if (/Android|iPhone/i.test(navigator.userAgent)) {
+  // This checks if the current device is in fact mobile
+  googleCloud.style.left  = `${ferrisWheelCenterPointX - 400}px`;
+  googleCloud.style.top = `${ferrisWheelCenterPointY - 400}px`;
+}
+else
+{
+  googleCloud.style.left  = `${ferrisWheelCenterPointX + 250}px`;
+  googleCloud.style.top = `${ferrisWheelCenterPointY - 400}px`;
+}
+
+
+
+
 
 
 
