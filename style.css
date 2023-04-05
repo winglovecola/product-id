@@ -99,6 +99,7 @@ main {
     line-height: 0px;
     text-align: center;
     font-weight: lighter;
+    user-select: none;
 }
 
 .googleBooksStatusRed {

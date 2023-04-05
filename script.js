@@ -227,7 +227,7 @@ library.style.top = `${ferrisWheelCenterPointY + 280}px`;
 
 //make the following items draggable using jQuery UI: ferris wheel, google cloud, library
 $(fw).draggable();
-$(googleCloud).draggable();
+$(googleCloud).draggable({ handle: '#googleBooksLabel'});
 $(library).draggable();
 
 
