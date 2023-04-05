@@ -30,10 +30,17 @@ function googleBooksDownload () {
   searchGoogleBooks (bookQueryInput);
 
   $('#bookQueryUpdate').html ('Downloading...');
+  
+  $('#googleBooksDownloading').show();
+  
+  
+
+
 
   setTimeout (() => {
     $('#bookQueryUpdate').html ('');
-  }, 2000);
+    $('#googleBooksDownloading').hide();
+  }, 3000);
 }
 
 

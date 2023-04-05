@@ -17,11 +17,13 @@ main {
     position: absolute;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     background-color: blue;
+    border-radius: 50%;
     color:white;
-    text-align: center;
+    cursor: pointer;
     line-height: 100px;
+    text-align: center;
+    user-select: none;
     z-index:10;
 }
 
@@ -78,10 +80,12 @@ main {
     height: 140;
     background-image: url('./img/cloud.png');
     background-size: 100% 100%;    
-    text-align: center;
     font-size: 20px;
     font-weight: bold;
     line-height: 170px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none; 
     z-index: 50;
 }
 
@@ -101,6 +105,13 @@ main {
 .googleBooksStatusRed {
 
     color:rgb(255, 76, 76);
+}
+
+#googleBooksDownloading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 70px;
 }
 
 
@@ -173,9 +184,11 @@ main {
     height: 200;
     background-image: url('./img/library.png');
     background-size: 100% 100%;    
-    text-align: center;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    user-select: none; 
     z-index: 50;
 }
 
