@@ -119,7 +119,7 @@ function libraryLoadBook (capsuleId) {
       <div class="remove" onClick="libraryBookRemove('lb${bookdivId}')">X</div>
       <div class="bookimg"><img src="${thisBook.volumeInfo.imageLinks.thumbnail}"/></div>
       <div class="info">
-        <div class="title"><a href="${thisBook.canonicalVolumeLink}" target="_blank">${thisBook.volumeInfo.title}</a></div>
+        <div class="title"><a href="${thisBook.volumeInfo.canonicalVolumeLink}" target="_blank">${thisBook.volumeInfo.title}</a></div>
         <div class="author">${thisBook.volumeInfo.authors[0]}</div>
         <div class="categories">${thisBook.volumeInfo.categories}</div>
       </div>
