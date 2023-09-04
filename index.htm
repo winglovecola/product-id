@@ -6,46 +6,22 @@
 <body>
     <main id="main">
         <!--ferris wheel container-->
-        <div id='ferrisWheel'></div>
+        <div id='productIdTable'></div>
         
-        <div id='googleCloud'>
-            <div id='googleBooksLabel'>Google Books</div>
-            <div id='googleBooksStatus'></div>
-            <img id='googleBooksDownloading' src='./img/download.gif'>
-            <div id='bookQuery'>What kind of book you are looking for:
-                <br/><br/>
-                <input type='text' id='bookQueryInput' name='bookQueryInput' value='programming'>
-                <input id='downloadBtn' type='button' value='Download More' style='float: right' onClick='googleBooksDownload ()'>
-                <div id='bookQueryUpdate'></div>
-            </div>
+        <div id='printIdQuery'>
+            Prefix:<br/><input type='text' id='productIdPrefix' name='productIdPrefix' value='Wing-230902'>
+            <br/><br/>
+            Category Prefix:<br/><input type='text' id='categoryId' name='categoryId' value='C'>
+            <br/><br/>
+            Increment:<br/><input type='text' id='productIdIncrement' name='productIdIncrement' value='80'>
+            
+            <br/><input id='printBtn' type='button' value='Print Table' onClick='printID ()'>
+     
         </div>
 
-        <div id='library'></div>
-
-        <div id='libraryBooks'>
-            <div id='libraryLabel'>
-                Library Books
-                <div id='libraryBookCount'></div>
-            </div>
-            <div id='libraryBookStock'></div>
-        </div>
-
-        <div id='tips'>
-            TIPS:<br/>
-            <ol>
-                <li>Pick up a book when ferris capsult touchs the cloud</li>
-                <li>Load off a book when ferris capsult touchs the library</li>
-                <li>Ferris wheel, cloud and library is <b>draggable</b></li>
-            </ol>
-        </div>
     <main>
 </body>
 
 <script src='jquery-3.6.0.js'></script>
-<script src='jquery-ui.js'></script>
-
-<script src='jquery.ui.touch-punch.min.js'></script>
-
-
 <script src='script.js'></script>
 </html>
