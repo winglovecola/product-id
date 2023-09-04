@@ -1,5 +1,6 @@
 let productIdPrefix = '';
-let productIdIncrement = '';
+let productIdIncrementFrom = '';
+let productIdIncrementTo = '';
 let categoryId = '';
 
 let productIdHtml = '';
@@ -11,10 +12,11 @@ function printID () {
 
   productIdPrefix = $('#productIdPrefix').val ();
   categoryId = $('#categoryId').val ();
-  productIdIncrement = parseInt ($('#productIdIncrement').val ());
+  productIdIncrementFrom = parseInt ($('#productIdIncrementFrom').val ());
+  productIdIncrementTo = parseInt ($('#productIdIncrementTo').val ());
 
 
-  for (var i = 1; i <= productIdIncrement; i++)
+  for (var i = productIdIncrementFrom; i <= productIdIncrementTo; i++)
   {
     productIdHtml += `<div class='productCell'>${productIdPrefix}-
     <div class='productCellId'>${categoryId}${i}</div></div>`;
