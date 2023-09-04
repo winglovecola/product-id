@@ -16,7 +16,7 @@ function printID () {
 
   for (var i = 1; i <= productIdIncrement; i++)
   {
-    productIdHtml += `<div class='productCell'>${productIdPrefix}
+    productIdHtml += `<div class='productCell'>${productIdPrefix}-
     <div class='productCellId'>${categoryId}${i}</div></div>`;
     
   }
