@@ -1,31 +1,18 @@
-# Knowledge Wheel
+# Product ID
 
 
 
 ## Description
 
-I have built a simple application using JavaScript, CSS, HTML, and the Google Book API. I was inspired by the Ferris wheel, which to me represents fun and foresight, and books, which symbolize knowledge. I think those are the characteristics we should have to become a good developer. Combining these two elements, I created this small yet meaningful application.
-
-Through this app, I also demonstrate my proficiency in using JavaScript, CSS, HTML, and API.
+Print custom product ID with custom format
 
 
-
-## Table of Contents
-
-- [Live Site](#live-site)
-- [Preview](#preview)
-- [Questions](#questions)
 
 
 ## Live Site
 
-https://winglovecola.github.io/knowledge-wheel/
+https://winglovecola.github.io/product-id/
 
-
-
-## Preview
-
-![Screenshot](https://github.com/winglovecola/knowledge-wheel/blob/main/img/screenshot.jpg?raw=true)
 
 
 
