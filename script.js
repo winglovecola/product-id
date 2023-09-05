@@ -15,7 +15,6 @@ function printID () {
   productIdPrefix = $('#productIdPrefix').val ();
 
   const productIdPrefixLast = productIdPrefix.substring (productIdPrefix.length - 1, productIdPrefix.length);
-console.log (productIdPrefixLast)
 
   $('#idError').html ('');  
   if (productIdPrefix.trim ().length == 0)
