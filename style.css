@@ -37,3 +37,13 @@ main {
 
     color: red;
 }
+
+#printIdQuery {
+
+    font-size: 22px;
+}
+
+#printIdQuery input {
+
+    font-size: 22px;
+}

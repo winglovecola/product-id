@@ -12,7 +12,7 @@ function printID () {
 
 
 
-  productIdPrefix = $('#productIdPrefix').val ();
+  productIdPrefix = $('#productIdPrefix').val ().trim ();
 
   const productIdPrefixLast = productIdPrefix.substring (productIdPrefix.length - 1, productIdPrefix.length);
 
@@ -61,7 +61,7 @@ function idExample () {
   const day = date.getDate().toString().padStart(2, '0');
 
   const dateHtml = year.substring (2, 4) + month + day;
-  $('#idExample').html (`Ex: Wing-${dateHtml}-`);
+  $('#idExample').html (`<span style='color:#C0C0C0'>Ex:</span> Wing-${dateHtml}-`);
 }
 
 
