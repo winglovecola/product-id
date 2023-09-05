@@ -10,15 +10,35 @@ function printID () {
 
   productIdHtml = ''; //reset html
 
+
+
   productIdPrefix = $('#productIdPrefix').val ();
+
+  const productIdPrefixLast = productIdPrefix.substring (productIdPrefix.length - 1, productIdPrefix.length);
+console.log (productIdPrefixLast)
+
+  $('#idError').html ('');  
+  if (productIdPrefix.trim ().length == 0)
+  {
+    $('#idError').html ("ID cannot be empty");
+    return; 
+  }
+  else if (productIdPrefixLast != '-')
+  {
+    $('#idError').html ("ID must end with the symbol dash '-'");
+    return; 
+  }
+
+
   categoryId = $('#categoryId').val ();
   productIdIncrementFrom = parseInt ($('#productIdIncrementFrom').val ());
   productIdIncrementTo = parseInt ($('#productIdIncrementTo').val ());
 
+  
 
   for (var i = productIdIncrementFrom; i <= productIdIncrementTo; i++)
   {
-    productIdHtml += `<div class='productCell'>${productIdPrefix}-
+    productIdHtml += `<div class='productCell'>${productIdPrefix}
     <div class='productCellId'>${categoryId}${i}</div></div>`;
     
   }
@@ -33,3 +53,17 @@ function printID () {
 
 }
 
+
+function idExample () {
+
+  const date = new Date();
+  const year = date.getFullYear().toString();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+
+  const dateHtml = year.substring (2, 4) + month + day;
+  $('#idExample').html (`Ex: Wing-${dateHtml}-`);
+}
+
+
+idExample ();
