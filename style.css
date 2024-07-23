@@ -11,7 +11,6 @@ main {
 
 #optionTable {
     padding-bottom: 40px;
-
 }
 
 .productCellContainer {
@@ -19,7 +18,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     page-break-inside: auto;
 }
 
