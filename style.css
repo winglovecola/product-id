@@ -6,6 +6,7 @@ main {
     display: block;
     position: relative;
     width: 100%;
+
 }
 
 
@@ -13,16 +14,18 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: left;
+    padding-bottom: 50px;
+    page-break-inside: auto;
 }
 
 .productCell {
 
-    width: 110px;
+    width: 150px;
     border: 1px dotted gray;
     text-align: center;
     padding: 5px;
+    page-break-inside: avoid;
 }
 
 

@@ -5,24 +5,94 @@
 </head>    
 <body>
     <main id="main">
-        <!--ferris wheel container-->
+
+        <div id='optionTable'>  
+            <table border='1' cellpadding='4' style='border-collapse: collapse' bordercolor='#E5E5E5'>
+                <tr>
+                <td align='center'>Category</td>
+                <td align='center'>Location</td>
+                <td align='center'>Shelf #</td>
+                <td align='center'>Shelf Level</td>
+                <td align='center'>Shelf Spot</td>
+                <td align='center'>Your Name</td>
+                <td align='center'>Date</td>
+                <td align='center'>Item #</td>
+                </tr>
+                <tr>
+                    <td align='center' valign='top'>
+                
+                        <select size='5' id='category'>
+                        <option value='CARD'>Card</option>
+                        <option value='CD'>CD</option>
+                        <option value='COMIC'>Comic</option>
+                        <option value='MAGA'>Magazine</option>
+                        <option value='MISC'>Miscellaneous</option>
+                        </select></p>
+                        
+                    </td>
+                    <td align='center' valign='top'>
+                        <select size='2' id='location'>
+                        <option value='B'>Back Shelf</option>
+                        <option value='F'>Front Shelf</option>
+                        </select>
+                        
+                    </td>
+                    <td align='center' valign='top'><input type='text' id='shelfId' size='7'></td>
+                    <td align='center' valign='top'><input type='text' id='shelfLevel' size='7'></td>
+                    <td align='center' valign='top'>
+                    
+                
+                        <select size='5' id='shelfSpot'>
+                        <option value='A'>A</option>
+                        <option value='B'>B</option>
+                        <option value='C'>C</option>
+                        <option value='D'>D</option>
+                        </select></p>
+                        
+                    
+                    </td>
+                    <td align='center' valign='top'><input type='text' id='byName' size='10' maxlength="5"></td>
+                    <td align='center' valign='top'><input type='text' id='date' size='12'></td>
+                    <td align='center' valign='top'><input type='text' id='itemIdFrom' size='2'> to <input type='text' id='itemIdTo' size='2'></td>
+                </tr>
+                
+                <tr>
+                    <td align='center'><div id='htmlErrorCategory' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorLocation' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorShelfId' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorShelfLevel' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorShelfSpot' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorName' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorDate' class='htmlError'></div></td>
+                    <td align='center'><div id='htmlErrorItemId' class='htmlError'></div></td>
+                </tr>
+
+                
+                <tr>
+                    <td align='left' valign='top' colspan='4'>
+            
+                        <input id='btnReset' type='button' value='RESET' onClick='reset ()'>
+                    </td>
+                    <td align='right' valign='top' colspan='4'>
+            
+                    <input id='btnAdd' type='button' value='ADD' onClick='addIdTable ()' style='font-size: 20px; width: 100px'> <input id='btnPrint' type='button' value='PRINT' onClick='printIdTable ()' style='font-size: 20px; width: 100px'>
+                </td>
+                </tr>
+
+
+            </table>
+        </div>
+
         <div id='productIdTable'></div>
         
-        <div id='printIdQuery'>
-            ID:<br/><input type='text' id='productIdPrefix' name='productIdPrefix' value=''> <span id="idExample"></span>
-            <div id='idError' class='htmlError'></div>
-            <br/><br/>
-            Category Prefix:<br/><input type='text' id='categoryId' name='categoryId' value='C'>
-            <br/><br/>
-            Increment:<br/><input type='text' id='productIdIncrementFrom' name='productIdIncrementFrom' value='1' size='4'> to <input type='text' id='productIdIncrementTo' name='productIdIncrementTo' value='80' size='4'>
-            
-            <br/><br/><input id='printBtn' type='button' value='Print Table' onClick='printID ()'>
-     
-        </div>
 
     <main>
 </body>
 
 <script src='jquery-3.6.0.js'></script>
 <script src='script.js'></script>
+<script>
+    defaultDate ();
+    updatePrintButtonState();
+</script>
 </html>
