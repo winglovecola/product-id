@@ -9,6 +9,10 @@ main {
 
 }
 
+#optionTable {
+    padding-bottom: 40px;
+
+}
 
 .productCellContainer {
     display: flex;

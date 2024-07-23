@@ -177,7 +177,7 @@ function addIdTable() {
     </div>`;
   }
 
-  productIdHtml = '<div class="productCellContainer"><button class="removeBtn" style="display:none;">Remove</button>' + productIdHtml + '</div>';
+  productIdHtml = '<div class="productCellContainer"><button class="removeBtn" style="display:none; color:red; cursor: pointer;">Remove</button>' + productIdHtml + '</div>';
 
   $('#productIdTable').append(productIdHtml);
   $('#printIdQuery').hide();
