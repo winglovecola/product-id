@@ -172,8 +172,8 @@ function addIdTable() {
     const incrementId = i.toString().padStart(2, '0');
 
     productIdHtml += `<div class='productCell'>
-    ${category}-${location}-${shelfId}-${shelfLevel}${shelfSpot}-<br>${byName}-${date}-<br>
-    <div class='productCellId'>${incrementId}</div>
+    ${category}-${location}-${shelfId}-${shelfLevel}${shelfSpot}-<br>
+    <div class='productCellId'>${byName}-${date}-${incrementId}</div>
     </div>`;
   }
 

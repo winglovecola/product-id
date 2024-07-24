@@ -20,21 +20,27 @@ main {
     justify-content: left;
     padding-bottom: 20px;
     page-break-inside: auto;
+
 }
 
 .productCell {
 
-    width: 150px;
+    width: 170px;
+    height: 60px;
     border: 1px dotted gray;
     text-align: center;
     padding: 5px;
     page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .productCellId {
 
-    font-size: 22px;
+    font-size: 21px;
     font-weight: bold;
     
 }
