@@ -23,9 +23,13 @@ main {
 
 }
 
-.productCell {
+.shelfId {
 
-    width: 165px;
+    white-space: nowrap;
+}
+
+.productCell {
+    min-width: 165px;
     height: 60px;
     border: 1px dotted gray;
     text-align: center;
