@@ -31,6 +31,9 @@ function reset() {
   $('#itemIdFrom').val('');
   $('#itemIdTo').val('');
 
+  
+  $('#shelfSpotCustom').val('');
+
   // Reset dropdown selections
   $('#category').prop('selectedIndex', -1); // Deselects any selected option
   $('#location').prop('selectedIndex', -1); // Deselects any selected option
@@ -65,6 +68,7 @@ function addIdTable() {
   const shelfId = $('#shelfId').val();
   const shelfLevel = $('#shelfLevel').val();
   const shelfSpot = $('#shelfSpot').val();
+  const shelfSpotCustom = $('#shelfSpotCustom').val();
   const byName = $('#byName').val();
   const date = $('#date').val();
   const itemIdFrom = $('#itemIdFrom').val();
@@ -172,7 +176,7 @@ function addIdTable() {
     const incrementId = i.toString().padStart(2, '0');
 
     productIdHtml += `<div class='productCell'>
-    <span class='shelfId'>${category}-${location}-${shelfId}-${shelfLevel}${shelfSpot}-</span>
+    <span class='shelfId'>${category}-${location}-${shelfId}-${shelfLevel}${shelfSpotCustom}-</span>
     <div class='productCellId'>${byName}-${date}-${incrementId}</div>
     </div>`;
   }
@@ -228,3 +232,10 @@ function defaultDate () {
 }
 
 
+$(document).ready(function() {
+  // When the dropdown value changes
+  $('#shelfSpot').change(function() {
+      // Set the value of #shelfSpotCustom to the selected value of #shelfSpot
+      $('#shelfSpotCustom').val($('#shelfSpot').val());
+  });
+});
