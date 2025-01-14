@@ -30,7 +30,7 @@ function reset() {
   $('#date').val('');
   $('#itemIdFrom').val('');
   $('#itemIdTo').val('');
-
+  $('#rightCornerLabel').val('');
   
   $('#shelfSpotCustom').val('');
 
@@ -73,6 +73,7 @@ function addIdTable() {
   const date = $('#date').val();
   const itemIdFrom = $('#itemIdFrom').val();
   const itemIdTo = $('#itemIdTo').val();
+  const rightCornerLabelValue = $('#rightCornerLabel').val();
 
   if (!category) {
     isValid = false;
@@ -176,6 +177,7 @@ function addIdTable() {
     const incrementId = i.toString().padStart(2, '0');
 
     productIdHtml += `<div class='productCell'>
+    <span class='rightCornerLabel'>${rightCornerLabelValue}</span>
     <span class='shelfId'>${category}-${location}-${shelfId}-${shelfLevel}${shelfSpotCustom}-</span>
     <div class='productCellId'>${byName}-${date}-${incrementId}</div>
     </div>`;
