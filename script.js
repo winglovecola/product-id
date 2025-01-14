@@ -73,7 +73,11 @@ function addIdTable() {
   const date = $('#date').val();
   const itemIdFrom = $('#itemIdFrom').val();
   const itemIdTo = $('#itemIdTo').val();
-  const rightCornerLabelValue = $('#rightCornerLabel').val();
+  var rightCornerLabelValue = $('#rightCornerLabel').val();
+
+  if (rightCornerLabelValue === '$') {
+    rightCornerLabelValue = '$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+  }
 
   if (!category) {
     isValid = false;
