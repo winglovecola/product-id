@@ -76,7 +76,7 @@ function addIdTable() {
   var rightCornerLabelValue = $('#rightCornerLabel').val();
 
   if (rightCornerLabelValue === '$') {
-    rightCornerLabelValue = '$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    rightCornerLabelValue = '$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
   }
 
   if (!category) {
