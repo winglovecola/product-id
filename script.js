@@ -55,6 +55,8 @@ function reset() {
   defaultDate ();
 }
 
+var tableId = 0;
+
 
 function addIdTable() {
   productIdHtml = ''; // Reset HTML
@@ -184,10 +186,13 @@ function addIdTable() {
     <span class='rightCornerLabel'>${rightCornerLabelValue}</span>
     <span class='shelfId'>${category}-${location}-${shelfId}-${shelfLevel}${shelfSpotCustom}-</span>
     <div class='productCellId'>${byName}-${date}-${incrementId}</div>
+    <div class='productCellOpitons'>
+      <span class='productCellOpitonClone'>Clone</span> <span class='productCellOpitonRemove'>Remove</span> <span class='productCellOpitonCopy'>Copy</span>
+    </div>
     </div>`;
   }
 
-  productIdHtml = '<div class="productCellContainer"><button class="removeBtn" style="display:none; color:red; cursor: pointer;">Remove</button>' + productIdHtml + '</div>';
+  productIdHtml = '<div id="productCellContainer' + tableId + '" class="productCellContainer"><button class="removeBtn" style="display:none; color:red; cursor: pointer;">Remove</button><button class="printBtn" style="display:none; color:#00008B; cursor: pointer;">Print</button>' + productIdHtml + '</div>';
 
   $('#productIdTable').append(productIdHtml);
   $('#printIdQuery').hide();
@@ -195,15 +200,38 @@ function addIdTable() {
   updatePrintButtonState();
 
 
+  tableId++;
+
   // Add hover event to show/hide remove button
   $('.productCellContainer').hover(
     function() {
       $(this).find('.removeBtn').show();
+      $(this).find('.printBtn').show();
+      $(this, '.productCell').find('.productCellOpitons').show();
+      $('#productIdTable').find('.productCellOpitonRemove').hide();
+      $('#productIdTableClonesCellsWrap').find('.productCellOpitonRemove').show();
+      
     }, 
     function() {
       $(this).find('.removeBtn').hide();
+      $(this).find('.printBtn').hide();
+      $(this, '.productCell').find('.productCellOpitons').hide();
     }
   );
+
+
+  $('#productIdTableClones').hover(
+    function() {
+      $(this).find('.emptyBtn').show();
+      $(this).find('.printBtn').show();
+    }, 
+    function() {
+      $(this).find('.emptyBtn').hide();
+      $(this).find('.printBtn').hide();
+      
+    }
+  );
+
 
   // Add click event to remove product cell
   $('.removeBtn').click(function() {
@@ -211,6 +239,100 @@ function addIdTable() {
 
     updatePrintButtonState();
   });
+
+  $('.emptyBtn').click(function() {
+    $('#productIdTableClonesCells').empty();
+
+  });
+
+
+
+  $(document).on('click', '.productCellOpitonRemove', function() {
+    // Remove the parent .productCell element
+    $(this).closest('.productCell').remove();
+  });
+  
+  
+
+ 
+    $(document).on('click', '.productCellOpitonCopy', function() {
+    // Get the combined text from .shelfId and .productCellId
+    const shelfIdText = $(this).closest('.productCell').find('.shelfId').text();
+    const productCellIdText = $(this).closest('.productCell').find('.productCellId').text();
+    const combinedText = shelfIdText + productCellIdText;
+
+    // Create a temporary input element to copy the text
+    const tempInput = $('<input>');
+    $('body').append(tempInput);
+    tempInput.val(combinedText).select();
+    
+    // Copy the text to clipboard
+    document.execCommand('copy');
+    
+    // Remove the temporary input element
+    tempInput.remove();
+
+    // Optional: You can display an alert or message to show that the text was copied
+    alert('Copied to clipboard: ' + combinedText);
+  });
+
+
+
+ 
+    $(document).on('click', '.productCellOpitonClone', function() {
+    // Find the parent .productCell element
+    $(this).prop('disabled', true);
+    
+    const productCell = $(this).closest('.productCell');
+    
+    // Clone the .productCell
+    const clonedProductCell = productCell.clone();
+    
+    // Optionally modify the cloned element (e.g., change IDs, classes, etc.)
+    // Example: You may want to clear or modify specific fields in the clone
+    
+    // Append the cloned div to the same container or a parent container
+    $('#productIdTableClonesCells').append(clonedProductCell);
+    //console.log ('cloned')
+
+      // Optionally, you can enable the clone button again after a certain time (e.g., 2 seconds)
+  setTimeout(() => {
+    $(this).prop('disabled', false); // Re-enable the button after the timeout
+  }, 100);  // Time in milliseconds (e.g., 2000ms = 2 seconds)
+});
+
+
+const printButtons = document.querySelectorAll('.printBtn');
+    // Loop through each print button and add the event listener
+printButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    //console.log('testtest');
+    
+    // Get the parent element (productCellContainer)
+    const parentContainer = this.closest('.productCellContainer');
+    
+    // Get the ID of the parent element
+    const parentId = parentContainer.id;
+    
+    // Log the parent ID (or use it as needed)
+    //console.log('Parent ID: ' + parentId);
+
+    // Get the element you want to print
+    const node = document.getElementById(parentId);
+    
+    // Clone the node to avoid modifying the original content
+    const printWindow = window.open('', '', 'height=600,width=800');
+    printWindow.document.write('<html><head><title>Print</title><link rel="stylesheet" href="style.css" /></head><body>');
+    printWindow.document.write(node.outerHTML);
+    printWindow.document.write('<div id="optionTable"> <input id="btnPrint" type="button" value="PRINT" onClick="printSpecificTable ()" style="font-size: 20px; width: 100px; cursor: pointer;"></div><script src="jquery-3.6.0.js"></script><script src="script.js"></script><script>$(".removeBtn").hide();$(".printBtn").hide();$(".emptyBtn").hide();$(".productCellOpitons").hide();</script></body></html>');
+
+    // Wait for content to load, then trigger print
+    //printWindow.document.close();
+    //printWindow.print();
+    
+    // You can also proceed with printing logic here if necessary
+  });
+});
 } 
 
 function printIdTable() {
@@ -220,9 +342,22 @@ function printIdTable() {
   //document.body.innerHTML = printContent;
 
   $('#optionTable').hide();
+  $('#productIdTableClones').hide();
+  
   window.print();
   $('#optionTable').show();
+  $('#productIdTableClones').show();
   //location.reload(); // Reload the page to restore event handlers
+}
+
+function printSpecificTable() {
+  //$('.removeBtn').hide();
+  //$('.printBtn').hide();
+
+  $('#optionTable').hide();
+  window.print();
+  $('#optionTable').show();
+
 }
 
 

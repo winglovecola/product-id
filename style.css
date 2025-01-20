@@ -24,6 +24,19 @@ main {
 
 }
 
+#productIdTableClonesCells {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding-bottom: 20px;
+    page-break-inside: auto;
+
+}
+
+
+
 .shelfId {
 
     white-space: nowrap;
@@ -44,6 +57,35 @@ main {
 }
 
 
+.productCellOpitons {
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
+}
+
+.productCellOpitons span {
+
+    font-size: 8px;
+    color: gray;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.productCellOpitons span:hover {
+    background-color: lightseagreen;
+    color: black;
+    border: 1px solid black;
+}
+
+
+
+
 .productCellId {
 
     font-size: 21px;
@@ -59,6 +101,9 @@ main {
     font-size: 13px;
     color: gray;
 }
+
+
+
 
 .htmlError {
 
