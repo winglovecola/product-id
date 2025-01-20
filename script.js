@@ -199,6 +199,8 @@ function addIdTable() {
 
   updatePrintButtonState();
 
+  eventRegiter ();
+
 
   tableId++;
 
@@ -238,6 +240,8 @@ function addIdTable() {
     $(this).closest('.productCellContainer').remove();
 
     updatePrintButtonState();
+
+    eventRegiter ();
   });
 
   $('.emptyBtn').click(function() {
@@ -245,62 +249,56 @@ function addIdTable() {
 
   });
 
+  function eventRegiter () {
 
-
-  $(document).on('click', '.productCellOpitonRemove', function() {
-    // Remove the parent .productCell element
-    $(this).closest('.productCell').remove();
-  });
-  
-  
-
- 
+    $(document).off('click', '.productCellOpitonRemove');
+    $(document).on('click', '.productCellOpitonRemove', function() {
+      // Remove the parent .productCell element
+      $(this).closest('.productCell').remove();
+    });
+    
+    $(document).off('click', '.productCellOpitonCopy');
     $(document).on('click', '.productCellOpitonCopy', function() {
-    // Get the combined text from .shelfId and .productCellId
-    const shelfIdText = $(this).closest('.productCell').find('.shelfId').text();
-    const productCellIdText = $(this).closest('.productCell').find('.productCellId').text();
-    const combinedText = shelfIdText + productCellIdText;
 
-    // Create a temporary input element to copy the text
-    const tempInput = $('<input>');
-    $('body').append(tempInput);
-    tempInput.val(combinedText).select();
-    
-    // Copy the text to clipboard
-    document.execCommand('copy');
-    
-    // Remove the temporary input element
-    tempInput.remove();
+      // Get the combined text from .shelfId and .productCellId
+      const shelfIdText = $(this).closest('.productCell').find('.shelfId').text();
+      const productCellIdText = $(this).closest('.productCell').find('.productCellId').text();
+      const combinedText = shelfIdText + productCellIdText;
 
-    // Optional: You can display an alert or message to show that the text was copied
-    alert('Copied to clipboard: ' + combinedText);
-  });
+      // Create a temporary input element to copy the text
+      const tempInput = $('<input>');
+      $('body').append(tempInput);
+      tempInput.val(combinedText).select();
+      
+      // Copy the text to clipboard
+      document.execCommand('copy');
+      
+      // Remove the temporary input element
+      tempInput.remove();
+
+      // Optional: You can display an alert or message to show that the text was copied
+      alert('Copied to clipboard: ' + combinedText);
+    });
 
 
 
- 
-    $(document).on('click', '.productCellOpitonClone', function() {
-    // Find the parent .productCell element
-    $(this).prop('disabled', true);
-    
-    const productCell = $(this).closest('.productCell');
-    
-    // Clone the .productCell
-    const clonedProductCell = productCell.clone();
-    
-    // Optionally modify the cloned element (e.g., change IDs, classes, etc.)
-    // Example: You may want to clear or modify specific fields in the clone
-    
-    // Append the cloned div to the same container or a parent container
-    $('#productIdTableClonesCells').append(clonedProductCell);
-    //console.log ('cloned')
-
-      // Optionally, you can enable the clone button again after a certain time (e.g., 2 seconds)
-  setTimeout(() => {
-    $(this).prop('disabled', false); // Re-enable the button after the timeout
-  }, 100);  // Time in milliseconds (e.g., 2000ms = 2 seconds)
-});
-
+    $(document).off('click', '.productCellOpitonClone');
+      $(document).on('click', '.productCellOpitonClone', function() {
+      // Find the parent .productCell element
+      
+      const productCell = $(this).closest('.productCell');
+      
+      // Clone the .productCell
+      const clonedProductCell = productCell.clone();
+      
+      // Optionally modify the cloned element (e.g., change IDs, classes, etc.)
+      // Example: You may want to clear or modify specific fields in the clone
+      
+      // Append the cloned div to the same container or a parent container
+      $('#productIdTableClonesCells').append(clonedProductCell);
+      //console.log ('cloned')
+    });
+}
 
 const printButtons = document.querySelectorAll('.printBtn');
     // Loop through each print button and add the event listener
